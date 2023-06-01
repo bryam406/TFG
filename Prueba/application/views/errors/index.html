@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style type="text/css">
+        
+        img{
+    width: 350px;
+    height: 350px;
+}
+#previousbtn{
+    margin-right: 75px;;
+}
+#nextbtn{
+    margin-left: 75px;
+}
+    </style>
+</head>
+<body>
+    <h1>Click to see the next image</h1>
+    <div id="splash">
+        <img src="./images/splash class room image.jpg" alt="classroom image" id="mainImage">
+    </div> 
+    <div id="controls">
+        <button id="previousbtn" onclick="previousImage()">Previous Image</button>
+        <button id="nextbtn" onclick="nextImage()"> Next Image</button>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+    function nextImage(){
+    var img = document.getElementById("mainImage");
+    for(var i = 0; i < imgArray.length;i++){
+        if(imgArray[i].src == img.src){
+            if(i === imgArray.length){
+                document.getElementById("mainImage").src = imgArray[0].src;
+                break;
+            }
+            document.getElementById("mainImage").src = imgArray[i+1].src;
+            break;
+        }
+    }
+}
+function previousImage(){
+    var img = document.getElementById("mainImage");
+    for(var i = imgArray.length-1; i >=0 ;i--){
+        if(imgArray[i].src == img.src){
+            if(i === imgArray.length){
+                document.getElementById("mainImage").src = imgArray[4].src;
+                break;
+            }
+            document.getElementById("mainImage").src = imgArray[i-1].src;
+            break;
+        }
+    }
+}
+
+</script>
